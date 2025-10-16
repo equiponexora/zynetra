@@ -16,31 +16,23 @@
         <img src="logo.png" alt="Logo Nexora" class="logo">
         <h1 class="brand-name">Nexora</h1>
       </div>
-
-      <!-- Menú de navegación -->
       <nav class="nav">
-        <a href="#" class="nav-link active">Inicio</a>
+        <a href="#" class="active">Inicio</a>
         <a href="#">Servicios</a>
         <a href="#">Proyectos</a>
         <a href="#">Contacto</a>
       </nav>
-
-      <!-- Botón menú móvil -->
-      <div class="menu-toggle" id="menu-toggle">
-        ☰
-      </div>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
     </div>
   </header>
 
-  <!-- Contenido principal -->
-  <main>
-    <section class="hero">
-      <h2 class="hero-title">Soluciones digitales que impulsan tu futuro</h2>
-      <p class="hero-desc">
-        En Nexora creamos experiencias web modernas, seguras y totalmente adaptadas a tu negocio.
-      </p>
-      <button class="cta-btn">Contáctanos</button>
-    </section>
+  <!-- Sección principal -->
+  <main class="hero">
+    <h2 class="hero-title">Soluciones digitales que impulsan tu futuro</h2>
+    <p class="hero-desc">
+      En Nexora desarrollamos experiencias digitales modernas, seguras y adaptadas a tus necesidades.
+    </p>
+    <button class="cta-btn">Contáctanos</button>
   </main>
 
   <!-- Pie de página -->
@@ -49,13 +41,11 @@
   </footer>
 
   <script>
-    // Menú móvil
     const toggle = document.getElementById('menu-toggle');
     const nav = document.querySelector('.nav');
     toggle.addEventListener('click', () => {
       nav.classList.toggle('show');
     });
   </script>
-
 </body>
 </html>
