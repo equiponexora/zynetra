@@ -125,6 +125,7 @@ body {
   font-weight: 700;
   margin-bottom: 1rem;
   background: linear-gradient(90deg, #00c2ff, #b300ff);
+  background-clip: text; /* ← propiedad estándar */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
