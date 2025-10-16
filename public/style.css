@@ -12,6 +12,7 @@ html, body {
 body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #6a00f4, #00c2ff);
+  background-attachment: fixed; /* Fija el fondo para que no se mueva con el scroll */
   color: #fff;
   text-align: center;
   display: flex;
@@ -21,24 +22,28 @@ body {
 
 /* === Encabezado === */
 .main-header {
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px); /* Para compatibilidad con Safari */
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-  padding: 0.8rem 2rem;
+  /* Fondo más oscuro y con más desenfoque */
+  background: rgba(10, 2, 28, 0.6); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Para compatibilidad con Safari */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  padding: 0.8rem 0; /* Se elimina el padding lateral para que el container lo controle */
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .header-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Empuja el logo a la izquierda y el nav a la derecha */
   align-items: center;
-  max-width: 1100px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px; /* Limita el ancho máximo del contenido */
+  margin: 0 auto; /* Centra el contenido */
+  padding: 0 2rem; /* Espaciado en los bordes para que no se pegue */
 }
 
 /* === Logo y nombre === */
@@ -67,14 +72,14 @@ body {
 /* === Navegación === */
 .nav {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.8rem;
 }
 
 .nav a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s, transform 0.3s;
+  transition: color 0.3s; /* Animación de color suave, sin saltos */
   position: relative;
   padding: 5px 0;
 }
@@ -97,7 +102,7 @@ body {
 
 .nav a:hover {
   color: #00c2ff;
-  transform: translateY(-2px);
+  /* Se elimina el transform para evitar el "bug" visual */
 }
 
 /* === Menú móvil === */
@@ -108,7 +113,7 @@ body {
   color: #fff;
   background: none;
   border: none;
-  z-index: 110; /* Para que esté por encima del menú */
+  z-index: 110; 
 }
 
 /* Clase para accesibilidad (ocultar visualmente) */
@@ -126,12 +131,12 @@ body {
 
 /* === Sección principal === */
 .hero {
-  flex-grow: 1; /* Hace que esta sección ocupe el espacio disponible */
+  flex-grow: 1; 
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem 1rem;
-  margin-top: 80px; /* Espacio para el header fijo */
+  margin-top: 80px; 
 }
 
 .hero-content {
@@ -139,47 +144,53 @@ body {
 }
 
 .hero-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
   background: linear-gradient(90deg, #00c2ff, #b300ff);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   line-height: 1.2;
+  /* Sombra para que el texto resalte más */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 .hero-desc {
   font-size: 1.1rem;
   max-width: 600px;
-  margin: 0 auto 2rem;
-  line-height: 1.6;
-  color: #eaeaea;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+  /* Color blanco puro para máximo contraste y legibilidad */
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .cta-btn {
   background: linear-gradient(90deg, #00c2ff, #8a2be2);
   color: #fff;
   border: none;
-  padding: 12px 30px;
+  padding: 14px 35px;
   border-radius: 30px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cta-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0, 194, 255, 0.6);
+  box-shadow: 0 0 25px rgba(0, 194, 255, 0.7);
 }
 
 /* === Pie de página === */
 .footer {
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  /* Mismo fondo oscuro y con desenfoque que el encabezado */
+  background: rgba(10, 2, 28, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
   font-size: 0.9rem;
   color: #dcdcdc;
@@ -190,8 +201,8 @@ body {
 
 /* === Media Query para Responsividad (Tablets y Móviles) === */
 @media (max-width: 768px) {
-  .main-header {
-    padding: 0.5rem 1rem;
+  .header-container {
+    padding: 0 1rem; /* Menos padding en los lados para pantallas pequeñas */
   }
   
   .brand-name {
@@ -202,38 +213,35 @@ body {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 100%; /* Se alinea justo debajo del header */
+    top: 100%; 
     left: 0;
     background: rgba(15, 12, 41, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     width: 100%;
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 2rem 0;
     gap: 1.5rem;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
   }
 
   .nav.show {
-    display: flex; /* Se muestra al hacer clic */
+    display: flex; 
   }
 
   .menu-toggle {
-    display: block; /* El botón hamburguesa se hace visible */
+    display: block; 
   }
 
-  /* Ajustes en la sección hero para móviles */
   .hero {
-    margin-top: 70px; /* Se ajusta el margen para el header */
+    margin-top: 70px;
     padding: 1rem;
   }
 
   .hero-title {
-    font-size: 2rem; /* Título más pequeño para mejor lectura */
+    font-size: 2.2rem;
   }
 
   .hero-desc {
-    font-size: 1rem; /* Descripción ligeramente más pequeña */
+    font-size: 1rem;
   }
 }
