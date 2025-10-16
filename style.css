@@ -1,0 +1,140 @@
+:root {
+  --blue: #00aaff;
+  --purple: #7f00ff;
+  --bg-dark: #0a0016;
+  --text-light: #f2f2f2;
+  --gradient: linear-gradient(135deg, var(--blue), var(--purple));
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #060012, #180035);
+  color: var(--text-light);
+  overflow-x: hidden;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(10, 0, 30, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 60px;
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: var(--gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.company-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: var(--gradient);
+  background-clip: text; /* ← propiedad estándar */
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.nav a {
+  color: #ddd;
+  text-decoration: none;
+  margin-left: 24px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: var(--blue);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 20px 60px;
+  background: url("public/hero-bg.jpg") center/cover no-repeat;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 700px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.hero-title {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+  background: var(--gradient);
+  background-clip: text; /* ← propiedad estándar */
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ddd;
+  margin-bottom: 24px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 30px;
+  background: var(--gradient);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.3s;
+}
+
+.cta-button:hover {
+  opacity: 0.8;
+}
+
+/* Footer */
+.footer {
+  background: rgba(10, 0, 30, 0.95);
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-content p {
+  color: #ccc;
+  font-size: 0.9rem;
+}
