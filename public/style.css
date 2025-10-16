@@ -12,7 +12,7 @@ html, body {
 body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #6a00f4, #00c2ff);
-  background-attachment: fixed; /* Fija el fondo para que no se mueva con el scroll */
+  background-attachment: fixed;
   color: #fff;
   text-align: center;
   display: flex;
@@ -22,12 +22,11 @@ body {
 
 /* === Encabezado === */
 .main-header {
-  /* Fondo más oscuro y con más desenfoque */
   background: rgba(10, 2, 28, 0.6); 
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px); /* Para compatibilidad con Safari */
+  -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  padding: 0.8rem 0; /* Se elimina el padding lateral para que el container lo controle */
+  padding: 0.8rem 2rem;
   position: fixed;
   width: 100%;
   top: 0;
@@ -38,12 +37,9 @@ body {
 
 .header-container {
   display: flex;
-  justify-content: space-between; /* Empuja el logo a la izquierda y el nav a la derecha */
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1200px; /* Limita el ancho máximo del contenido */
-  margin: 0 auto; /* Centra el contenido */
-  padding: 0 2rem; /* Espaciado en los bordes para que no se pegue */
 }
 
 /* === Logo y nombre === */
@@ -79,7 +75,7 @@ body {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s; /* Animación de color suave, sin saltos */
+  transition: color 0.3s;
   position: relative;
   padding: 5px 0;
 }
@@ -102,7 +98,6 @@ body {
 
 .nav a:hover {
   color: #00c2ff;
-  /* Se elimina el transform para evitar el "bug" visual */
 }
 
 /* === Menú móvil === */
@@ -116,7 +111,6 @@ body {
   z-index: 110; 
 }
 
-/* Clase para accesibilidad (ocultar visualmente) */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -140,20 +134,16 @@ body {
 }
 
 .hero-content {
-  max-width: 650px;
+  max-width: 700px;
 }
 
 .hero-title {
   font-size: 2.8rem;
   font-weight: 700;
-  background: linear-gradient(90deg, #00c2ff, #b300ff);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
   margin-bottom: 1.5rem;
   line-height: 1.2;
-  /* Sombra para que el texto resalte más */
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-desc {
@@ -161,7 +151,6 @@ body {
   max-width: 600px;
   margin: 0 auto 2.5rem;
   line-height: 1.7;
-  /* Color blanco puro para máximo contraste y legibilidad */
   color: #ffffff;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
@@ -186,7 +175,6 @@ body {
 
 /* === Pie de página === */
 .footer {
-  /* Mismo fondo oscuro y con desenfoque que el encabezado */
   background: rgba(10, 2, 28, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -198,11 +186,10 @@ body {
   width: 100%;
 }
 
-
 /* === Media Query para Responsividad (Tablets y Móviles) === */
 @media (max-width: 768px) {
-  .header-container {
-    padding: 0 1rem; /* Menos padding en los lados para pantallas pequeñas */
+  .main-header {
+    padding: 0.8rem 1rem;
   }
   
   .brand-name {
