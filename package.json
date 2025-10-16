@@ -1,0 +1,23 @@
+{
+  "name": "nexora",
+  "version": "1.0.0",
+  "description": "Página web de Nexora con Express y Vercel",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/equiponexora/nexora.git"
+  },
+  "keywords": ["nexora", "express", "vercel", "nodejs"],
+  "author": "Equipo Nexora",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/equiponexora/nexora/issues"
+  },
+  "homepage": "https://github.com/equiponexora/nexora#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
