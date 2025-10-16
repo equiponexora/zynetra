@@ -16,23 +16,28 @@
         <img src="logo.png" alt="Logo Nexora" class="logo">
         <h1 class="brand-name">Nexora</h1>
       </div>
-      <nav class="nav">
+      <nav class="nav" id="main-nav">
         <a href="#" class="active">Inicio</a>
         <a href="#">Servicios</a>
         <a href="#">Proyectos</a>
         <a href="#">Contacto</a>
       </nav>
-      <div class="menu-toggle" id="menu-toggle">☰</div>
+      <button class="menu-toggle" id="menu-toggle" aria-controls="main-nav" aria-expanded="false">
+        <span class="sr-only">Abrir menú</span>
+        ☰
+      </button>
     </div>
   </header>
 
   <!-- Sección principal -->
   <main class="hero">
-    <h2 class="hero-title">Soluciones digitales que impulsan tu futuro</h2>
-    <p class="hero-desc">
-      En Nexora desarrollamos experiencias digitales modernas, seguras y adaptadas a tus necesidades.
-    </p>
-    <button class="cta-btn">Contáctanos</button>
+    <div class="hero-content">
+      <h2 class="hero-title">Soluciones digitales que impulsan tu futuro</h2>
+      <p class="hero-desc">
+        En Nexora desarrollamos experiencias digitales modernas, seguras y adaptadas a tus necesidades.
+      </p>
+      <button class="cta-btn">Contáctanos</button>
+    </div>
   </main>
 
   <!-- Pie de página -->
@@ -41,10 +46,17 @@
   </footer>
 
   <script>
-    const toggle = document.getElementById('menu-toggle');
-    const nav = document.querySelector('.nav');
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('show');
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+
+    menuToggle.addEventListener('click', () => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      
+      // Alternar la clase en la navegación para mostrarla/ocultarla
+      mainNav.classList.toggle('show');
+      
+      // Actualizar el estado aria-expanded en el botón
+      menuToggle.setAttribute('aria-expanded', !isExpanded);
     });
   </script>
 </body>
