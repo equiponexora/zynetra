@@ -1,44 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nexora | Soluciones Digitales</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexora - Soluciones digitales</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- ENCABEZADO -->
-  <header class="header">
-    <div class="container header-content">
-      <div class="logo-box">
-        <img src="public/logo.png" alt="Logo Nexora" class="logo" />
+
+  <!-- Encabezado -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo-container">
+        <img src="logo.png" alt="Logo Nexora" class="logo">
+        <h1 class="brand-name">Nexora</h1>
       </div>
-      <h1 class="company-name">Nexora</h1>
+
+      <!-- Menú de navegación -->
+      <nav class="nav">
+        <a href="#" class="nav-link active">Inicio</a>
+        <a href="#">Servicios</a>
+        <a href="#">Proyectos</a>
+        <a href="#">Contacto</a>
+      </nav>
+
+      <!-- Botón menú móvil -->
+      <div class="menu-toggle" id="menu-toggle">
+        ☰
+      </div>
     </div>
-    <nav class="nav">
-      <a href="#">Inicio</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
+  <!-- Contenido principal -->
+  <main>
+    <section class="hero">
       <h2 class="hero-title">Soluciones digitales que impulsan tu futuro</h2>
-      <p class="hero-description">
-        En <strong>Nexora</strong> convertimos ideas en experiencias digitales únicas.
-        Creamos sitios web modernos, aplicaciones y estrategias tecnológicas que transforman negocios.
+      <p class="hero-desc">
+        En Nexora creamos experiencias web modernas, seguras y totalmente adaptadas a tu negocio.
       </p>
-      <a href="#contacto" class="cta-button">Contáctanos</a>
-    </div>
-  </section>
+      <button class="cta-btn">Contáctanos</button>
+    </section>
+  </main>
 
-  <!-- PIE DE PÁGINA -->
+  <!-- Pie de página -->
   <footer class="footer">
-    <div class="footer-content">
-      <p>© 2025 <strong>Nexora</strong>. Todos los derechos reservados.</p>
-    </div>
+    <p>© 2025 Nexora. Todos los derechos reservados.</p>
   </footer>
+
+  <script>
+    // Menú móvil
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.querySelector('.nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+  </script>
+
 </body>
 </html>
