@@ -7,6 +7,8 @@
 
 html, body {
   height: 100%;
+  /* --- CAMBIO AQUÍ ---: Ocultamos el cursor por defecto */
+  cursor: none;
 }
 
 body {
@@ -19,6 +21,39 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+
+/* === Cursor Personalizado === */
+#custom-cursor {
+  position: fixed;
+  /* El punto central del cursor */
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+  /* El círculo exterior */
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  padding: 12px;
+  background-clip: content-box; /* Para que el fondo no ocupe el espacio del borde */
+
+  /* Posicionamiento y comportamiento */
+  transform: translate(-50%, -50%); /* Centra el div en la posición del puntero */
+  pointer-events: none; /* Permite hacer clic a través del cursor */
+  z-index: 9999;
+  transition: transform 0.2s ease, padding 0.3s ease, background-color 0.3s ease;
+}
+
+/* Estado de interacción del cursor (al pasar sobre enlaces/botones) */
+#custom-cursor.grow {
+  padding: 25px; /* Expande el círculo exterior */
+  background-color: rgba(255, 255, 255, 0.2); /* Relleno semitransparente */
+  border-color: rgba(255, 255, 255, 0); /* Oculta el borde */
+}
+
+/* Para que los elementos interactivos tampoco muestren el cursor por defecto */
+a, button {
+  cursor: none;
+}
+
 
 /* === Encabezado === */
 .main-header {
@@ -188,6 +223,16 @@ body {
 
 /* === Media Query para Responsividad (Tablets y Móviles) === */
 @media (max-width: 768px) {
+  /* Ocultar cursor personalizado en pantallas táctiles */
+  #custom-cursor {
+    display: none !important;
+  }
+  
+  /* Devolver el cursor por defecto en móviles por si acaso */
+  html, body, a, button {
+    cursor: default;
+  }
+
   .main-header {
     padding: 0.8rem 1rem;
   }
