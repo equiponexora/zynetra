@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* --- CORRECCIÓN AQUÍ ---: Ocultamos el cursor por defecto en TODOS los elementos */
   cursor: none;
 }
 
@@ -20,11 +19,14 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  /* --- CORRECCIÓN AQUÍ ---: Evita la selección de texto en TODA la página */
+  user-select: none;
+  -webkit-user-select: none; /* Para Safari */
+  -moz-user-select: none;    /* Para Firefox */
 }
 
-/* === Cursor Personalizado (Estructura Corregida) === */
+/* === Cursor Personalizado === */
 #custom-cursor {
-  /* Este es el CÍRCULO EXTERIOR */
   position: fixed;
   width: 30px;
   height: 30px;
@@ -40,23 +42,21 @@ body {
 }
 
 .cursor-dot {
-  /* Este es el PUNTO CENTRAL */
   width: 6px;
   height: 6px;
-  background-color: #fff; /* Usamos blanco para que combine, no negro */
+  background-color: #fff;
   border-radius: 50%;
   transition: transform 0.3s ease;
 }
 
-/* Estado de interacción del cursor (al pasar sobre enlaces/botones) */
 #custom-cursor.grow {
-  width: 50px; /* Expande el círculo exterior */
+  width: 50px;
   height: 50px;
-  border-color: rgba(0, 194, 255, 0.8); /* Cambia el color del borde para feedback */
+  border-color: rgba(0, 194, 255, 0.8);
 }
 
 #custom-cursor.grow .cursor-dot {
-  transform: scale(0); /* Encoge el punto central hasta desaparecer */
+  transform: scale(0);
 }
 
 
@@ -176,13 +176,6 @@ body {
   max-width: 700px;
 }
 
-.hero-title, .hero-desc {
-  /* --- CORRECCIÓN AQUÍ ---: Evita la selección de texto */
-  user-select: none;
-  -webkit-user-select: none; /* Para Safari */
-  -moz-user-select: none;    /* Para Firefox */
-}
-
 .hero-title {
   font-size: 2.8rem;
   font-weight: 700;
@@ -233,14 +226,16 @@ body {
 
 /* === Media Query para Responsividad (Tablets y Móviles) === */
 @media (max-width: 768px) {
-  /* Ocultar cursor personalizado en pantallas táctiles */
   #custom-cursor {
     display: none !important;
   }
   
-  /* Devolver el cursor por defecto en móviles por si acaso */
   * {
     cursor: default;
+    /* --- CORRECCIÓN AQUÍ ---: Habilitamos la selección en móviles si es necesario */
+    user-select: auto;
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
   }
 
   .main-header {
