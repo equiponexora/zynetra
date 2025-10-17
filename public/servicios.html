@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestros Servicios - Zyntra</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-services"> <!-- Clase para identificar la página de servicios -->
+
+  <!-- Elemento para el cursor personalizado (necesario en todas las páginas) -->
+  <div id="custom-cursor">
+    <div class="cursor-dot"></div>
+  </div>
+
+  <!-- Encabezado (consistente en todas las páginas) -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo-container">
+        <a href="index.html" class="logo-link"><img src="logo.png" alt="Logo Zyntra" class="logo"></a>
+        <h1 class="brand-name">Zyntra</h1>
+      </div>
+      <nav class="nav" id="main-nav">
+        <a href="index.html">Inicio</a>
+        <!-- CAMBIO AQUÍ: El enlace "Servicios" ahora está activo -->
+        <a href="servicios.html" class="active">Servicios</a>
+        <a href="#">Proyectos</a>
+        <a href="#">Contacto</a>
+      </nav>
+      <button class="menu-toggle" id="menu-toggle" aria-controls="main-nav" aria-expanded="false">
+        <span class="sr-only">Abrir menú</span>
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <!-- Contenido principal de la página de servicios -->
+  <main>
+    <section id="servicios" class="services-section">
+      <h2 class="section-title">Nuestros Servicios</h2>
+      <div class="services-grid">
+        <!-- Tarjeta de Servicio 1 -->
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3>Creación de Páginas Web</h3>
+          <p>Diseñamos y desarrollamos sitios web a medida, optimizados para la velocidad y la visibilidad en buscadores (SEO), garantizando una experiencia de usuario impecable en cualquier dispositivo.</p>
+        </div>
+
+        <!-- Tarjeta de Servicio 2 -->
+        <div class="service-card">
+          <div class="service-icon">⚙️</div>
+          <h3>Mantenimiento y Soporte</h3>
+          <p>Ofrecemos planes de mantenimiento integral para que tu web esté siempre segura, actualizada y funcionando al máximo rendimiento. Soporte técnico rápido y eficaz para tu tranquilidad.</p>
+        </div>
+
+        <!-- Tarjeta de Servicio 3 -->
+        <div class="service-card">
+          <div class="service-icon">🤖</div>
+          <h3>Automatización a Medida</h3>
+          <p>Creamos soluciones de software y automatización personalizadas para optimizar tus procesos, reducir tareas repetitivas y aumentar la productividad de tu negocio de forma inteligente.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Pie de página (consistente en todas las páginas) -->
+  <footer class="footer">
+    <p>© 2025 Zyntra. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

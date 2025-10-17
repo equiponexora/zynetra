@@ -6,8 +6,9 @@
   cursor: none;
 }
 
-html, body {
-  height: 100%;
+html {
+  /* Habilita el desplazamiento suave al hacer clic en enlaces internos (útil si se vuelve a usar) */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -15,9 +16,6 @@ body {
   background-color: #0d0221; /* Color de fondo base por si el video no carga */
   color: #fff;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -159,19 +157,17 @@ body {
   border: 0;
 }
 
-/* === Sección principal (Hero) === */
-.hero {
-  flex-grow: 1; 
+/* === Sección principal (Hero) de la página de inicio === */
+.page-home .hero {
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem 1rem;
   position: relative;
   overflow: hidden;
-  margin-top: 0;
 }
 
-/* === Video de Fondo === */
 .video-background {
   position: absolute;
   top: 0;
@@ -237,6 +233,74 @@ body {
   box-shadow: 0 0 25px rgba(0, 194, 255, 0.7);
 }
 
+/* === Sección Servicios (usada en servicios.html) === */
+.services-section {
+  padding: 6rem 2rem;
+  background-color: #0a011a;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #00c2ff, #8a2be2);
+  border-radius: 2px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 194, 255, 0.2);
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.service-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #dcdcdc;
+}
+
 /* === Pie de página === */
 .footer {
   background: rgba(10, 2, 28, 0.6);
@@ -250,6 +314,11 @@ body {
   width: 100%;
   position: relative;
   z-index: 5;
+}
+
+/* === Ajustes específicos para la página de servicios === */
+.page-services main {
+  padding-top: 80px; /* Añade un espacio arriba para el header fijo */
 }
 
 /* === Media Query para Responsividad (Tablets y Móviles) === */
@@ -302,5 +371,13 @@ body {
 
   .hero-desc {
     font-size: 1rem;
+  }
+
+  .services-section {
+    padding: 4rem 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
   }
 }

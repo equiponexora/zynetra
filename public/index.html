@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="page-home"> <!-- Clase para identificar la página de inicio -->
 
   <!-- Elemento para el cursor personalizado -->
   <div id="custom-cursor">
@@ -18,12 +18,13 @@
   <header class="main-header">
     <div class="header-container">
       <div class="logo-container">
-        <img src="logo.png" alt="Logo Zyntra" class="logo">
+        <a href="index.html" class="logo-link"><img src="logo.png" alt="Logo Zyntra" class="logo"></a>
         <h1 class="brand-name">Zyntra</h1>
       </div>
       <nav class="nav" id="main-nav">
-        <a href="#" class="active">Inicio</a>
-        <a href="#">Servicios</a>
+        <a href="index.html" class="active">Inicio</a>
+        <!-- CAMBIO AQUÍ: El enlace ahora apunta a la nueva página -->
+        <a href="servicios.html">Servicios</a>
         <a href="#">Proyectos</a>
         <a href="#">Contacto</a>
       </nav>
@@ -34,7 +35,7 @@
     </div>
   </header>
 
-  <!-- Sección principal con video de fondo -->
+  <!-- Sección principal (Hero) con video de fondo -->
   <main class="hero">
     <div class="video-background">
       <video autoplay loop muted playsinline>
@@ -43,7 +44,6 @@
       </video>
       <div class="video-overlay"></div>
     </div>
-
     <div class="hero-content">
       <h2 class="hero-title">Soluciones digitales que impulsan tu futuro</h2>
       <p class="hero-desc">
@@ -58,8 +58,6 @@
     <p>© 2025 Zyntra. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Cargamos nuestro script de confianza desde un archivo externo -->
   <script src="script.js" defer></script>
-  
 </body>
 </html>
