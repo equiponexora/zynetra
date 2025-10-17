@@ -7,14 +7,10 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="page-services"> <!-- Clase para identificar la página de servicios -->
+<body class="page-services">
 
-  <!-- Elemento para el cursor personalizado (necesario en todas las páginas) -->
-  <div id="custom-cursor">
-    <div class="cursor-dot"></div>
-  </div>
+  <div id="custom-cursor"><div class="cursor-dot"></div></div>
 
-  <!-- Encabezado (consistente en todas las páginas) -->
   <header class="main-header">
     <div class="header-container">
       <div class="logo-container">
@@ -23,51 +19,101 @@
       </div>
       <nav class="nav" id="main-nav">
         <a href="index.html">Inicio</a>
-        <!-- CAMBIO AQUÍ: El enlace "Servicios" ahora está activo -->
         <a href="servicios.html" class="active">Servicios</a>
         <a href="#">Proyectos</a>
         <a href="#">Contacto</a>
       </nav>
       <button class="menu-toggle" id="menu-toggle" aria-controls="main-nav" aria-expanded="false">
-        <span class="sr-only">Abrir menú</span>
-        ☰
+        <span class="sr-only">Abrir menú</span>☰
       </button>
     </div>
   </header>
 
-  <!-- Contenido principal de la página de servicios -->
   <main>
     <section id="servicios" class="services-section">
       <h2 class="section-title">Nuestros Servicios</h2>
       <div class="services-grid">
-        <!-- Tarjeta de Servicio 1 -->
+
+        <!-- Tarjeta de Servicio 1: Creación Web -->
         <div class="service-card">
-          <div class="service-icon">🌐</div>
+          <img src="servicio-web.jpg" alt="Creación de páginas web" class="service-image">
           <h3>Creación de Páginas Web</h3>
-          <p>Diseñamos y desarrollamos sitios web a medida, optimizados para la velocidad y la visibilidad en buscadores (SEO), garantizando una experiencia de usuario impecable en cualquier dispositivo.</p>
+          <button class="btn-modal" data-modal-target="#modal-web">Ver Detalles</button>
         </div>
 
-        <!-- Tarjeta de Servicio 2 -->
+        <!-- Tarjeta de Servicio 2: Mantenimiento -->
         <div class="service-card">
-          <div class="service-icon">⚙️</div>
+          <img src="servicio-mantenimiento.jpg" alt="Mantenimiento y soporte técnico" class="service-image">
           <h3>Mantenimiento y Soporte</h3>
-          <p>Ofrecemos planes de mantenimiento integral para que tu web esté siempre segura, actualizada y funcionando al máximo rendimiento. Soporte técnico rápido y eficaz para tu tranquilidad.</p>
+          <button class="btn-modal" data-modal-target="#modal-mantenimiento">Ver Detalles</button>
         </div>
 
-        <!-- Tarjeta de Servicio 3 -->
+        <!-- Tarjeta de Servicio 3: Automatización -->
         <div class="service-card">
-          <div class="service-icon">🤖</div>
+          <img src="servicio-automatizacion.jpg" alt="Automatización y programación a medida" class="service-image">
           <h3>Automatización a Medida</h3>
-          <p>Creamos soluciones de software y automatización personalizadas para optimizar tus procesos, reducir tareas repetitivas y aumentar la productividad de tu negocio de forma inteligente.</p>
+          <button class="btn-modal" data-modal-target="#modal-automatizacion">Ver Detalles</button>
         </div>
+
       </div>
     </section>
   </main>
   
-  <!-- Pie de página (consistente en todas las páginas) -->
   <footer class="footer">
     <p>© 2025 Zyntra. Todos los derechos reservados.</p>
   </footer>
+
+  <!-- ======================================================= -->
+  <!-- ===========   VENTANAS EMERGENTES (MODALES) =========== -->
+  <!-- ======================================================= -->
+
+  <!-- Modal para Creación Web -->
+  <div class="modal-overlay" id="modal-web">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h2>🌐 Creación de Páginas Web</h2>
+      <p>Transformamos tu idea en una realidad digital. Creamos sitios web únicos, rápidos y totalmente adaptables a cualquier dispositivo (responsive).</p>
+      <h4>Ventajas Clave:</h4>
+      <ul>
+        <li>Diseño moderno y personalizado que refleja tu marca.</li>
+        <li>Optimización SEO desde la base para un mejor posicionamiento.</li>
+        <li>Rendimiento y velocidad de carga superiores.</li>
+        <li>Panel de control autogestionable si lo necesitas.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Modal para Mantenimiento y Soporte -->
+  <div class="modal-overlay" id="modal-mantenimiento">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h2>⚙️ Mantenimiento y Soporte</h2>
+      <p>Nos encargamos de la salud técnica de tu web para que tú te centres en tu negocio. Tu tranquilidad es nuestra prioridad.</p>
+      <h4>Ventajas Clave:</h4>
+      <ul>
+        <li>Actualizaciones de seguridad constantes para prevenir ataques.</li>
+        <li>Copias de seguridad periódicas para proteger tu información.</li>
+        <li>Monitorización de rendimiento para garantizar la velocidad.</li>
+        <li>Soporte técnico prioritario para resolver cualquier incidencia.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Modal para Automatización -->
+  <div class="modal-overlay" id="modal-automatizacion">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h2>🤖 Automatización a Medida</h2>
+      <p>Detectamos tareas repetitivas en tu flujo de trabajo y creamos herramientas de software que las hacen por ti. Ahorra tiempo, dinero y reduce errores humanos.</p>
+      <h4>Ventajas Clave:</h4>
+      <ul>
+        <li>Aumento radical de la productividad de tu equipo.</li>
+        <li>Integración con otras aplicaciones y APIs.</li>
+        <li>Procesamiento de datos y generación de informes automáticos.</li>
+        <li>Soluciones 100% adaptadas a tus necesidades específicas.</li>
+      </ul>
+    </div>
+  </div>
 
   <script src="script.js" defer></script>
 </body>

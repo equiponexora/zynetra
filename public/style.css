@@ -7,13 +7,12 @@
 }
 
 html {
-  /* Habilita el desplazamiento suave al hacer clic en enlaces internos (útil si se vuelve a usar) */
   scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #0d0221; /* Color de fondo base por si el video no carga */
+  background-color: #0d0221;
   color: #fff;
   text-align: center;
   user-select: none;
@@ -21,10 +20,14 @@ body {
   -moz-user-select: none;
 }
 
+body.modal-open {
+  overflow: hidden; /* Evita el scroll del fondo cuando el modal está abierto */
+}
+
 /* === Cursor Personalizado === */
 #custom-cursor {
   position: fixed;
-  top: -100px; 
+  top: -100px;
   left: -100px;
   width: 30px;
   height: 30px;
@@ -57,10 +60,9 @@ body {
   transform: scale(0);
 }
 
-
 /* === Encabezado === */
 .main-header {
-  background: rgba(10, 2, 28, 0.6); 
+  background: rgba(10, 2, 28, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -84,6 +86,10 @@ body {
   display: flex;
   align-items: center;
   gap: 0.8rem;
+}
+
+.logo-link {
+  display: block; /* Para asegurar que el enlace ocupe el espacio de la imagen */
 }
 
 .logo {
@@ -142,7 +148,7 @@ body {
   color: #fff;
   background: none;
   border: none;
-  z-index: 110; 
+  z-index: 110;
 }
 
 .sr-only {
@@ -157,7 +163,7 @@ body {
   border: 0;
 }
 
-/* === Sección principal (Hero) de la página de inicio === */
+/* === Sección Hero (Inicio) === */
 .page-home .hero {
   height: 100vh;
   display: flex;
@@ -233,7 +239,7 @@ body {
   box-shadow: 0 0 25px rgba(0, 194, 255, 0.7);
 }
 
-/* === Sección Servicios (usada en servicios.html) === */
+/* === Sección Servicios === */
 .services-section {
   padding: 6rem 2rem;
   background-color: #0a011a;
@@ -261,21 +267,24 @@ body {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* === Tarjeta de Servicio (Nueva Estructura) === */
 .service-card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 15px;
-  padding: 2.5rem 2rem;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card:hover {
@@ -283,22 +292,133 @@ body {
   box-shadow: 0 10px 30px rgba(0, 194, 255, 0.2);
 }
 
-.service-icon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
+.service-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .service-card h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 1rem;
   color: #fff;
+  padding: 1.5rem 1rem 0.5rem;
 }
 
-.service-card p {
+.btn-modal {
+  background: linear-gradient(90deg, #00c2ff, #8a2be2);
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
   font-size: 1rem;
-  line-height: 1.6;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin: 1rem auto 2rem;
+  display: inline-block;
+}
+
+.btn-modal:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 194, 255, 0.6);
+}
+
+/* === Estilos para Ventanas Emergentes (Modales) === */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 2, 28, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: rgba(20, 5, 50, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 2.5rem;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  text-align: left;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+  transform: scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+.modal-close:hover {
+  transform: scale(1.2);
+}
+
+.modal-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.modal-content p {
+  font-size: 1.1rem;
   color: #dcdcdc;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.modal-content h4 {
+  font-size: 1.2rem;
+  color: #00c2ff;
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.modal-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.modal-content ul li {
+  font-size: 1rem;
+  color: #dcdcdc;
+  padding: 0.5rem 0 0.5rem 2rem;
+  position: relative;
+}
+
+.modal-content ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #00c2ff;
+  font-weight: 600;
 }
 
 /* === Pie de página === */
@@ -318,10 +438,10 @@ body {
 
 /* === Ajustes específicos para la página de servicios === */
 .page-services main {
-  padding-top: 80px; /* Añade un espacio arriba para el header fijo */
+  padding-top: 100px;
 }
 
-/* === Media Query para Responsividad (Tablets y Móviles) === */
+/* === Media Query para Responsividad === */
 @media (max-width: 768px) {
   #custom-cursor {
     display: none !important;
@@ -379,5 +499,9 @@ body {
 
   .section-title {
     font-size: 2rem;
+  }
+
+  .page-services main {
+    padding-top: 80px;
   }
 }
