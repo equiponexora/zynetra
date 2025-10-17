@@ -3,12 +3,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* --- CORRECCIÓN AQUÍ ---: Ocultamos el cursor por defecto en TODOS los elementos */
+  cursor: none;
 }
 
 html, body {
   height: 100%;
-  /* --- CAMBIO AQUÍ ---: Ocultamos el cursor por defecto */
-  cursor: none;
 }
 
 body {
@@ -22,36 +22,41 @@ body {
   min-height: 100vh;
 }
 
-/* === Cursor Personalizado === */
+/* === Cursor Personalizado (Estructura Corregida) === */
 #custom-cursor {
+  /* Este es el CÍRCULO EXTERIOR */
   position: fixed;
-  /* El punto central del cursor */
-  width: 8px;
-  height: 8px;
-  background-color: #fff;
-  border-radius: 50%;
-  /* El círculo exterior */
+  width: 30px;
+  height: 30px;
   border: 2px solid rgba(255, 255, 255, 0.7);
-  padding: 12px;
-  background-clip: content-box; /* Para que el fondo no ocupe el espacio del borde */
-
-  /* Posicionamiento y comportamiento */
-  transform: translate(-50%, -50%); /* Centra el div en la posición del puntero */
-  pointer-events: none; /* Permite hacer clic a través del cursor */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
   z-index: 9999;
-  transition: transform 0.2s ease, padding 0.3s ease, background-color 0.3s ease;
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor-dot {
+  /* Este es el PUNTO CENTRAL */
+  width: 6px;
+  height: 6px;
+  background-color: #fff; /* Usamos blanco para que combine, no negro */
+  border-radius: 50%;
+  transition: transform 0.3s ease;
 }
 
 /* Estado de interacción del cursor (al pasar sobre enlaces/botones) */
 #custom-cursor.grow {
-  padding: 25px; /* Expande el círculo exterior */
-  background-color: rgba(255, 255, 255, 0.2); /* Relleno semitransparente */
-  border-color: rgba(255, 255, 255, 0); /* Oculta el borde */
+  width: 50px; /* Expande el círculo exterior */
+  height: 50px;
+  border-color: rgba(0, 194, 255, 0.8); /* Cambia el color del borde para feedback */
 }
 
-/* Para que los elementos interactivos tampoco muestren el cursor por defecto */
-a, button {
-  cursor: none;
+#custom-cursor.grow .cursor-dot {
+  transform: scale(0); /* Encoge el punto central hasta desaparecer */
 }
 
 
@@ -139,7 +144,6 @@ a, button {
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
-  cursor: pointer;
   color: #fff;
   background: none;
   border: none;
@@ -172,6 +176,13 @@ a, button {
   max-width: 700px;
 }
 
+.hero-title, .hero-desc {
+  /* --- CORRECCIÓN AQUÍ ---: Evita la selección de texto */
+  user-select: none;
+  -webkit-user-select: none; /* Para Safari */
+  -moz-user-select: none;    /* Para Firefox */
+}
+
 .hero-title {
   font-size: 2.8rem;
   font-weight: 700;
@@ -198,7 +209,6 @@ a, button {
   border-radius: 30px;
   font-size: 1.1rem;
   font-weight: 600;
-  cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -229,7 +239,7 @@ a, button {
   }
   
   /* Devolver el cursor por defecto en móviles por si acaso */
-  html, body, a, button {
+  * {
     cursor: default;
   }
 

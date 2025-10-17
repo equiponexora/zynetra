@@ -9,8 +9,10 @@
 </head>
 <body>
 
-  <!-- Elemento para el cursor personalizado -->
-  <div id="custom-cursor"></div>
+  <!-- Elemento para el cursor personalizado (nueva estructura) -->
+  <div id="custom-cursor">
+    <div class="cursor-dot"></div>
+  </div>
 
   <!-- Encabezado -->
   <header class="main-header">
@@ -61,11 +63,11 @@
 
     // --- Script para el cursor personalizado ---
     const cursor = document.getElementById('custom-cursor');
-    const interactiveElements = document.querySelectorAll('a, button, .menu-toggle');
+    // Actualizamos la lista para incluir elementos con la clase logo
+    const interactiveElements = document.querySelectorAll('a, button, .menu-toggle, .logo');
 
     // Mover el cursor
     window.addEventListener('mousemove', (e) => {
-      // Usamos e.clientX y e.clientY para la posición del cursor en la ventana
       cursor.style.left = e.clientX + 'px';
       cursor.style.top = e.clientY + 'px';
     });
@@ -79,7 +81,6 @@
         cursor.classList.remove('grow');
       });
     });
-
   </script>
 </body>
 </html>
