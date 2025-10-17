@@ -1,27 +1,27 @@
 {
-  "name": "zynetra",
+  "name": "zyntra",
   "version": "1.0.0",
-  "description": "Página web de Zynetra con Express y Vercel",
+  "description": "Página web de Zyntra con Express y Vercel",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/equiponexora/nexora.git"
+    "url": "git+https://github.com/equiponexorazyntra.git"  
   },
   "keywords": [
-    "zynetra",
+    "zyntra",
     "express",
     "vercel",
     "nodejs"
   ],
-  "author": "Equipo Zynetra",
+  "author": "Equipo Zyntra",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/equiponexora/nexora/issues"
+    "url": "https://github.com/equiponexora/zyntra/issues"
   },
-  "homepage": "https://github.com/equiponexora/nexora#readme",
+  "homepage": "https://github.com/equiponexora/zyntra#readme",
   "dependencies": {
     "express": "^4.18.2",
     "helmet": "^8.1.0"

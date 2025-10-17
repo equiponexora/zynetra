@@ -59,44 +59,44 @@
   </footer>
 
   <script>
-    // --- Script para el menú móvil ---
-    const menuToggle = document.getElementById('menu-toggle');
-    const mainNav = document.getElementById('main-nav');
+    // --- SCRIPT CORREGIDO ---
+    // Espera a que todo el HTML esté cargado antes de ejecutar el código
+    document.addEventListener('DOMContentLoaded', () => {
 
-    menuToggle.addEventListener('click', () => {
-      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      mainNav.classList.toggle('show');
-      menuToggle.setAttribute('aria-expanded', !isExpanded);
-    });
-
-    // --- Script para el cursor personalizado (Verificado) ---
-    const cursor = document.getElementById('custom-cursor');
-    const interactiveElements = document.querySelectorAll('a, button, .menu-toggle, .logo');
-
-    // Función para mover el cursor
-    const moveCursor = (e) => {
-      // Asegurarse de que el cursor exista antes de intentar moverlo
-      if (cursor) {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
+      // --- Script para el menú móvil ---
+      const menuToggle = document.getElementById('menu-toggle');
+      const mainNav = document.getElementById('main-nav');
+      
+      if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+          const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+          mainNav.classList.toggle('show');
+          menuToggle.setAttribute('aria-expanded', !isExpanded);
+        });
       }
-    };
 
-    // Añadir el listener para el movimiento del ratón
-    window.addEventListener('mousemove', moveCursor);
+      // --- Script para el cursor personalizado ---
+      const cursor = document.getElementById('custom-cursor');
+      const interactiveElements = document.querySelectorAll('a, button, .menu-toggle, .logo');
 
-    // Añadir clase 'grow' al pasar sobre elementos interactivos
-    interactiveElements.forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        if (cursor) {
-          cursor.classList.add('grow');
-        }
-      });
-      el.addEventListener('mouseleave', () => {
-        if (cursor) {
-          cursor.classList.remove('grow');
-        }
-      });
+      // Solo ejecutar si el cursor existe
+      if (cursor) {
+        // Mover el cursor
+        window.addEventListener('mousemove', (e) => {
+          cursor.style.left = e.clientX + 'px';
+          cursor.style.top = e.clientY + 'px';
+        });
+
+        // Añadir clase 'grow' al pasar sobre elementos interactivos
+        interactiveElements.forEach(el => {
+          el.addEventListener('mouseenter', () => {
+            cursor.classList.add('grow');
+          });
+          el.addEventListener('mouseleave', () => {
+            cursor.classList.remove('grow');
+          });
+        });
+      }
     });
   </script>
 </body>
