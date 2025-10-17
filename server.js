@@ -19,5 +19,5 @@ app.get('/', (req, res) => {
 
 // Inicia el servidor
 app.listen(port, () => {
-  console.log(`🚀 Servidor Nexora activo en el puerto ${port}`);
+  console.log(`🚀 Servidor Zynetra activo en el puerto ${port}`);
 });

@@ -1,7 +1,7 @@
 {
-  "name": "nexora",
+  "name": "zynetra",
   "version": "1.0.0",
-  "description": "Página web de Nexora con Express y Vercel",
+  "description": "Página web de Zynetra con Express y Vercel",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -11,12 +11,12 @@
     "url": "git+https://github.com/equiponexora/nexora.git"
   },
   "keywords": [
-    "nexora",
+    "zynetra",
     "express",
     "vercel",
     "nodejs"
   ],
-  "author": "Equipo Nexora",
+  "author": "Equipo Zynetra",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/equiponexora/nexora/issues"
