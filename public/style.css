@@ -12,7 +12,7 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #0d0221;
+  background-color: #0d0221; /* Fallback de color de fondo */
   color: #fff;
   text-align: center;
   user-select: none;
@@ -21,13 +21,32 @@ body {
 }
 
 body.modal-open {
-  overflow: hidden; /* Evita el scroll del fondo cuando el modal está abierto */
+  overflow: hidden;
+}
+
+/* === Fondo animado para la página de servicios === */
+.page-services {
+  background: linear-gradient(-45deg, #0d0221, #6a00f4, #00c2ff, #0a011a);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* === Cursor Personalizado === */
 #custom-cursor {
   position: fixed;
-  top: -100px;
+  top: -100px; 
   left: -100px;
   width: 30px;
   height: 30px;
@@ -60,9 +79,10 @@ body.modal-open {
   transform: scale(0);
 }
 
+
 /* === Encabezado === */
 .main-header {
-  background: rgba(10, 2, 28, 0.6);
+  background: rgba(10, 2, 28, 0.6); 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -89,7 +109,7 @@ body.modal-open {
 }
 
 .logo-link {
-  display: block; /* Para asegurar que el enlace ocupe el espacio de la imagen */
+  display: block;
 }
 
 .logo {
@@ -148,7 +168,7 @@ body.modal-open {
   color: #fff;
   background: none;
   border: none;
-  z-index: 110;
+  z-index: 110; 
 }
 
 .sr-only {
@@ -242,7 +262,7 @@ body.modal-open {
 /* === Sección Servicios === */
 .services-section {
   padding: 6rem 2rem;
-  background-color: #0a011a;
+  background-color: transparent; /* Permite ver el fondo animado del body */
 }
 
 .section-title {
@@ -273,7 +293,7 @@ body.modal-open {
   margin: 0 auto;
 }
 
-/* === Tarjeta de Servicio (Nueva Estructura) === */
+/* === Tarjeta de Servicio === */
 .service-card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
@@ -323,7 +343,7 @@ body.modal-open {
   box-shadow: 0 0 20px rgba(0, 194, 255, 0.6);
 }
 
-/* === Estilos para Ventanas Emergentes (Modales) === */
+/* === Estilos para Modales === */
 .modal-overlay {
   position: fixed;
   top: 0;
