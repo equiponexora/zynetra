@@ -10,7 +10,12 @@
     "type": "git",
     "url": "git+https://github.com/equiponexora/nexora.git"
   },
-  "keywords": ["nexora", "express", "vercel", "nodejs"],
+  "keywords": [
+    "nexora",
+    "express",
+    "vercel",
+    "nodejs"
+  ],
   "author": "Equipo Nexora",
   "license": "ISC",
   "bugs": {
@@ -18,6 +23,7 @@
   },
   "homepage": "https://github.com/equiponexora/nexora#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "helmet": "^8.1.0"
   }
 }

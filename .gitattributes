@@ -1,0 +1,13 @@
+# Establece el comportamiento por defecto para que Git intente adivinar.
+* text=auto
+
+# Para los siguientes tipos de archivo, fuerza el uso de finales de línea LF (estilo Unix/Mac)
+# Esto asegura consistencia en el repositorio.
+*.js      text eol=lf
+*.json    text eol=lf
+*.css     text eol=lf
+*.html    text eol=lf
+*.md      text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+vercel.json text eol=lf
