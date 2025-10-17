@@ -34,8 +34,18 @@
     </div>
   </header>
 
-  <!-- Sección principal -->
+  <!-- Sección principal con video de fondo -->
   <main class="hero">
+    <!-- Contenedor para el video y el overlay -->
+    <div class="video-background">
+      <video autoplay loop muted playsinline>
+        <source src="background-video.mp4" type="video/mp4">
+        Tu navegador no soporta videos HTML5.
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+
+    <!-- Contenido que va sobre el video -->
     <div class="hero-content">
       <h2 class="hero-title">Soluciones digitales que impulsan tu futuro</h2>
       <p class="hero-desc">
